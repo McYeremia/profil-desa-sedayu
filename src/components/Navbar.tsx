@@ -8,7 +8,7 @@ export default function Navbar() {
 
   const menuItems = [
     { href: "/", label: "Beranda" },
-    { href: "/layanan", label: "Layanan" },
+    { href: "/kegiatan", label: "Kegiatan" },
     { href: "/kontak", label: "Kontak" },
     { href: "/tentang", label: "Tentang" },
   ];

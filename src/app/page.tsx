@@ -2,7 +2,7 @@ export default function HomePage() {
   return (
     <>
 
-      <main className="bg-gray-50 font-poppins">
+      <main className="bg-gray-50">
         {/* Hero Section */}
         <section className="text-center py-20 px-4">
           <h1 className="text-4xl md:text-6xl font-extrabold text-black mb-4">
