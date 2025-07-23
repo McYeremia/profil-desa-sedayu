@@ -5,13 +5,28 @@ export default function HomePage() {
     <>
       <main className="bg-gray-50">
         {/* Hero Section */}
-        <section className="text-center py-20 px-4">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-black mb-6">
-            Padukuhan Sedayu
-          </h1>
-          <button className="bg-gradient-to-r from-blue-500 to-teal-300 text-white font-semibold px-6 py-2 rounded-full hover:opacity-90">
-            Lihat Aktivitas
-          </button>
+        <section className="relative w-full h-[500px] md:h-[600px] overflow-hidden">
+          {/* Gambar background pakai CSS */}
+          <div
+            className="absolute inset-0 bg-cover bg-center z-0"
+            style={{ backgroundImage: "url('/images/header-img.png')" }}
+          />
+
+          {/* Overlay agar teks terlihat jelas */}
+          <div className="absolute inset-0 bg-black bg-opacity-0 z-10" />
+
+          {/* Konten di atas gambar */}
+          <div className="relative z-20 flex flex-col justify-center items-center h-full text-center px-4">
+            <h1 className="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg mb-4">
+              Padukuhan Sedayu
+            </h1>
+            <p className="text-white text-lg drop-shadow mb-6 max-w-xl">
+              Informasi dan kegiatan terkini dari Padukuhan Sedayu, Argosari.
+            </p>
+            <button className="bg-gradient-to-r from-blue-500 to-teal-300 text-white font-semibold px-6 py-2 rounded-full hover:opacity-90 transition">
+              Lihat Aktivitas
+            </button>
+          </div>
         </section>
 
         {/* Gambaran Umum */}
@@ -34,8 +49,8 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-black text-3xl font-bold mb-4">Kegiatan Padukuhan</h2>
 
-            {/* Tampilkan hanya 6 kegiatan */}
-            <KegiatanGrid limit={6} />
+            {/* Tampilkan hanya 8 kegiatan */}
+            <KegiatanGrid limit={8} />
 
             <p className="mt-6">
               <a href="/kegiatan" className="text-black underline hover:text-blue-800">
