@@ -20,7 +20,7 @@ export default function HomePage() {
             <div className="w-full md:w-1/2">
               <div className="bg-gray-300 w-full h-60 md:h-72 rounded-xl"></div>
             </div>
-            <div className="w-full md:w-1/2">
+            <div className="text-black w-full md:w-1/2">
               <h2 className="text-2xl font-bold mb-4">Gambaran Umum</h2>
               <p className="text-gray-700">
                 Padukuhan Sedayu merupakan bagian dari Desa Argosari. Padukuhan Sedayu berada di sebelah timur Padukuhan Jurug. Dengan luas wilayah 34.68 ha. Secara administrasi wilayah Padukuhan Sedayu terbagi menjadi 4 Rukun Tetangga/RT. Yaitu RT 053, 054, 055 dan 056.
@@ -32,13 +32,13 @@ export default function HomePage() {
         {/* Kegiatan Padukuhan */}
         <section className="bg-gradient-to-r from-blue-400 to-teal-300 py-16 px-4">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-white mb-10">Kegiatan Padukuhan</h2>
+            <h2 className="text-black text-3xl font-bold mb-4">Kegiatan Padukuhan</h2>
 
             {/* Tampilkan hanya 6 kegiatan */}
             <KegiatanGrid limit={6} />
 
             <p className="mt-6">
-              <a href="/kegiatan" className="text-white underline hover:text-gray-200">
+              <a href="/kegiatan" className="text-black underline hover:text-blue-800">
                 Lihat Seluruh Kegiatan →
               </a>
             </p>
@@ -48,7 +48,7 @@ export default function HomePage() {
         {/* Lokasi Padukuhan */}
         <section className="bg-gradient-to-r from-blue-400 to-teal-300 py-16 px-4">
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-white mb-6">Lokasi Padukuhan</h2>
+            <h2 className="text-3xl font-bold text-black mb-6">Lokasi Padukuhan</h2>
             <div className="rounded-xl overflow-hidden shadow-lg">
               <iframe
                 title="Lokasi Padukuhan Sedayu"

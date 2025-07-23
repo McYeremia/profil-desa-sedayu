@@ -26,7 +26,7 @@ export default function KontakPage() {
 
       <div className="max-w-2xl mx-auto mt-10 h-[300px] md:h-[400px] rounded-lg overflow-hidden border border-gray-300">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7905.686455458004!2d110.25429075052077!3d-7.806415691370728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7af9e0b2c1a769%3A0x3c84b2e7e721853d!2sSedayu%2C%20Argosari%2C%20Sedayu%2C%20Bantul%20Regency%2C%20Special%20Region%20of%20Yogyakarta!5e0!3m2!1sen!2sid!4v1752336135813!5m2!1sen!2sid"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1976.418531180444!2d110.25891967339!3d-7.807067508789605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7af90068f84727%3A0x7078ff53a088c5ef!2sPadukuhan%20Sedayu!5e0!3m2!1sen!2sid!4v1753260308009!5m2!1sen!2sid"
           width="100%"
           height="100%"
           className="w-full h-full border-none"
