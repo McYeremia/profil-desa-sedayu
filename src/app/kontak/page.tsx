@@ -8,7 +8,7 @@ export default function KontakPage() {
       <div className="bg-white rounded-2xl p-6 md:p-10 max-w-2xl mx-auto text-gray-800 shadow">
         <div className="mb-6">
           <h2 className="font-semibold">Alamat</h2>
-          <p>Jl. Raya Sedayu No. 123, Argosari, Bantul, Yogyakarta</p>
+          <p>Kapel Nggirli, Sedayu, Argosari, Kec. Sedayu, Kabupaten Bantul, Daerah Istimewa Yogyakarta 55752</p>
         </div>
         <div className="mb-6">
           <h2 className="font-semibold">Email</h2>

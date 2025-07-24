@@ -39,13 +39,36 @@ export default function HomePage() {
 
       {/* Gambaran Umum */}
       <section className="bg-gradient-to-r from-blue-400 to-teal-300 py-16 px-4">
-        <div className="max-w-5xl mx-auto bg-white rounded-2xl p-6 md:p-10 flex flex-col md:flex-row gap-6 items-center shadow-md">
+        <div className="max-w-5xl mx-auto bg-white rounded-3xl p-6 md:p-10 flex flex-col md:flex-row gap-6 items-center shadow-lg">
+          {/* Gambar slider */}
           <div className="w-full md:w-1/2">
-            <div className="bg-gray-300 w-full h-60 md:h-72 rounded-xl"></div>
+            <div className="rounded-2xl overflow-hidden shadow">
+              <Swiper
+                modules={[Autoplay, Pagination]}
+                autoplay={{ delay: 2500, disableOnInteraction: false }}
+                pagination={{ clickable: true }}
+                loop
+                className="w-full h-full"
+              >
+                {sliderImages.map((num) => (
+                  <SwiperSlide key={num}>
+                    <Image
+                      src={`/images/slider/${num}.jpg`}
+                      alt={`Foto ${num}`}
+                      width={600}
+                      height={350}
+                      className="w-full h-[250px] md:h-[300px] object-cover"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
           </div>
+
+          {/* Deskripsi */}
           <div className="text-black w-full md:w-1/2">
             <h2 className="text-2xl font-bold mb-4">Gambaran Umum</h2>
-            <p className="text-gray-700">
+            <p className="text-gray-700 text-justify leading-relaxed">
               Padukuhan Sedayu merupakan bagian dari Desa Argosari. Padukuhan Sedayu berada di sebelah timur Padukuhan Jurug. Dengan luas wilayah 34.68 ha. Secara administrasi wilayah Padukuhan Sedayu terbagi menjadi 4 Rukun Tetangga/RT. Yaitu RT 053, 054, 055 dan 056.
             </p>
           </div>
