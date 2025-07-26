@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,8 +17,17 @@ export default function Navbar() {
   return (
     <header className="bg-white shadow-md py-4 px-6 sticky top-0 z-50">
       <div className="flex justify-between items-center max-w-7xl mx-auto">
-        {/* Logo */}
-        <h1 className="text-xl font-bold text-black">Sedayu</h1>
+        {/* Logo (image) */}
+        <Link href="/" className="flex items-center space-x-2">
+          <Image
+            src="/logo.png" // Pastikan file logo kamu ada di public/logo.png
+            alt="Logo Sedayu"
+            width={80}
+            height={60}
+            priority
+          />
+          <span className="sr-only">Beranda</span>
+        </Link>
 
         {/* Hamburger menu for mobile */}
         <button
@@ -46,7 +56,7 @@ export default function Navbar() {
               key={i}
               href={item.href}
               className="text-gray-800 hover:text-blue-500"
-              onClick={() => setMenuOpen(false)} // Close menu on click
+              onClick={() => setMenuOpen(false)}
             >
               {item.label}
             </Link>

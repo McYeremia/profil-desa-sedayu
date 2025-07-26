@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import Link from "next/link";
 
 
 export default function HomePage() {
@@ -30,9 +31,11 @@ export default function HomePage() {
           <p className="text-white text-lg drop-shadow mb-6 max-w-xl">
             Informasi dan kegiatan terkini dari Padukuhan Sedayu, Argosari.
           </p>
-          <button className="bg-gradient-to-r from-blue-500 to-teal-300 text-white font-semibold px-6 py-2 rounded-full hover:opacity-90 transition">
-            Lihat Aktivitas
-          </button>
+          <Link
+          href="/kegiatan"
+          className="bg-gradient-to-r from-blue-500 to-teal-300 text-white font-semibold px-6 py-2 rounded-full hover:opacity-90 transition">
+          Lihat Aktivitas
+          </Link>
         </div>
       </section>
 
@@ -91,7 +94,7 @@ export default function HomePage() {
       {/* Lokasi Padukuhan */}
       <section className="bg-gradient-to-r from-blue-400 to-teal-300 py-16 px-4">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-black mb-6">Lokasi Padukuhan</h2>
+          <h2 className="text-3xl font-bold text-black mb-6">Lokasi Padukuhan Sedayu</h2>
           <div className="rounded-xl overflow-hidden shadow-lg">
             <iframe
               title="Lokasi Padukuhan Sedayu"

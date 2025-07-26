@@ -16,11 +16,11 @@ export default function KontakPage() {
         </div>
         <div className="mb-6">
           <h2 className="font-semibold">Telepon / WhatsApp</h2>
-          <p>0812-3456-7890</p>
+          <p>0821-4723-7850 (Padukuhan Sedayu)</p>
         </div>
         <div>
           <h2 className="font-semibold">Jam Operasional</h2>
-          <p>Senin – Jumat, 08.00 – 15.00 WIB</p>
+          <p>24 Jam</p>
         </div>
       </div>
 
