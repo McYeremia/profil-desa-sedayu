@@ -60,7 +60,7 @@ const kegiatanData: Record<string, { title: string; description: string; waktu: 
       title: "Argosari Cup",
       description:
         "Turnamen bola voli tahunan yang bertujuan mempererat hubungan antarwarga dan menjaring bakat muda.",
-      waktu: "23 Agustus 2025",
+      waktu: "23 Agustus 2025 - Selesai",
       kontak: "0821-4723-7850 (Padukuhan Sedayu)"
     },
     "kwt-kinanti": {
