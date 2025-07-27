@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-export type Params = {
+export type PageProps = {
   params: {
     slug: string;
   };
@@ -114,12 +114,10 @@ const kegiatanData: Record<string, { title: string; description: string; waktu: 
     },
 };
 
-export default function KegiatanDetailPage({ params }: Params) {
+export default function KegiatanDetailPage({ params }: PageProps) {
   const kegiatan = kegiatanData[params.slug];
 
-  if (!kegiatan) {
-    notFound();
-  }
+  if (!kegiatan) return notFound();
 
   return (
     <main className="min-h-screen bg-gradient-to-r from-sky-400 to-cyan-300 p-6">
