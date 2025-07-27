@@ -4,19 +4,9 @@ import '../styles/custom.css';
 import "./globals.css";
 import Navbar from '../components/Navbar'
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata = {
-  title: 'Website Desa Sedayu',
-  description: 'Profil Desa Sedayu',
+  title: 'Website Padukuhan Sedayu',
+  description: 'Profil Padukuhan Sedayu',
 }
 
 export default function RootLayout({

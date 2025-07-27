@@ -84,9 +84,9 @@ export default function HomePage() {
           <h2 className="text-black text-3xl font-bold mb-4">Kegiatan Padukuhan</h2>
           <KegiatanGrid limit={8} />
           <p className="mt-6">
-            <a href="/kegiatan" className="text-black underline hover:text-blue-800">
+            <Link href="/kegiatan" className="text-black underline hover:text-blue-800">
               Lihat Seluruh Kegiatan →
-            </a>
+            </Link>
           </p>
         </div>
       </section>
