@@ -1,14 +1,12 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 
-// Tipe props halaman
 interface PageProps {
   params: Promise<{
     slug: string;
   }>;
 }
 
-// Data kegiatan
 const kegiatanData: Record<
   string,
   { title: string; description: string; waktu: string; kontak: string }
@@ -21,16 +19,16 @@ const kegiatanData: Record<
     kontak: "0821-4723-7850 (Padukuhan Sedayu)",
   },
   "karang-taruna": {
-    title: "Karang Taruna",
+    title: "Karang Taruna Nishtha Aradhana",
     description:
       "Organisasi kepemudaan yang aktif dalam kegiatan sosial seperti sosialisasi, evaluasi program, dan pengelolaan Bank Sampah. Menjadi wadah pembinaan dan pengembangan generasi muda dalam membangun karakter dan kepedulian sosial.",
     waktu: "Setiap akhir bulan",
-    kontak: "0821-4723-7850 (Padukuhan Sedayu)",
+    kontak: "0821-4723-7850 (Padukuhan Sedayu), Instagram: @karangtaruna_sedayu",
   },
   "pkk": {
     title: "PKK",
     description:
-      "Tim Penggerak PKK memiliki peran penting dalam pemberdayaan keluarga melalui kegiatan seperti penyuluhan kesehatan, edukasi keuangan keluarga, dan penyebaran informasi.",
+      "Tim Penggerak PKK memiliki peran penting dalam pemberdayaan keluarga melalui kegiatan seperti penyuluhan kesehatan, keuangan, dan penyebaran informasi mengenai padukuhan.",
     waktu: "Minggu ke-4 pukul 10.00",
     kontak: "0821-4723-7850 (Padukuhan Sedayu)",
   },
@@ -38,41 +36,41 @@ const kegiatanData: Record<
     title: "Kerja Bakti",
     description:
       "Kegiatan gotong royong warga untuk menjaga kebersihan lingkungan dan mempererat kebersamaan. Dilaksanakan secara berkala atau menjelang hari besar.",
-    waktu: "Menjelang hari besar atau sesuai kebutuhan",
+    waktu: "Setiap hari Minggu",
     kontak: "0821-4723-7850 (Padukuhan Sedayu)",
   },
   "posyandu-keliling": {
     title: "Posyandu Balita dan Lansia",
     description:
-      "Pelayanan kesehatan terpadu untuk balita dan lansia seperti penimbangan, pengukuran, dan penyuluhan kesehatan.",
+      "Pelayanan kesehatan terpadu untuk balita dan lansia seperti pencatatan, penimbangan, pengukuran, dan penyuluhan kesehatan.",
     waktu: "Setiap tanggal 12 pukul 09.00 WIB",
     kontak: "0821-4723-7850 (Padukuhan Sedayu)",
   },
   "posyandu-remaja": {
     title: "Posyandu Remaja",
     description:
-      "Pelayanan kesehatan dan edukasi untuk remaja, termasuk penyuluhan fisik dan mental.",
+      "Pelayanan kesehatan terpadu untuk remaja seperti pencatatan, penimbangan, pengukuran, dan penyuluhan kesehatan. Posyandu remaja juga merupakan salah satu bentuk program kerja dari Karang Taruna.",
     waktu: "Setiap tanggal 15 pukul 19.30 WIB",
     kontak: "0821-4723-7850 (Padukuhan Sedayu)",
   },
   "karawitan": {
     title: "Karawitan",
     description:
-      "Pelatihan seni gamelan tradisional Jawa yang bertujuan melestarikan budaya lokal.",
-    waktu: "Setiap Jumat malam pukul 19.30 WIB",
+      "Pelatihan seni gamelan tradisional yang bertujuan melestarikan budaya lokal.",
+    waktu: "Setiap Jumat pukul 19.30 WIB",
     kontak: "0821-4723-7850 (Padukuhan Sedayu)",
   },
   "argosari-cup": {
-    title: "Argosari Cup",
+    title: "Argosari Cup VI",
     description:
-      "Turnamen bola voli tahunan yang bertujuan mempererat hubungan antarwarga dan menjaring bakat muda.",
+      "Turnamen bola voli yang diadakan setiap tahun di Kelurahan Argosari, yang melibatkan berbagai padukuhan untuk bertanding dan menjadi tim bola voli padukuhan terbaik. Argosari Cup VI akan di adakan di padukuhan Sedayu dan akan dimulai pada tanggal 23 Agustus 2025.",
     waktu: "23 Agustus 2025 - Selesai",
     kontak: "0821-4723-7850 (Padukuhan Sedayu)",
   },
   "kwt-kinanti": {
     title: "KWT Kinanti",
     description:
-      "Kelompok Wanita Tani yang aktif dalam pengolahan dan penjualan produk makanan lokal.",
+      "Kelompok Wanita Tani yang aktif dalam pengolahan, penjualan produk makanan lokal, dan mengatur keuangan penjualan.",
     waktu: "Sabtu minggu ke-4 (tentatif)",
     kontak: "0821-4723-7850 (Padukuhan Sedayu)",
   },
@@ -88,34 +86,34 @@ const kegiatanData: Record<
     description:
       "Pertemuan rutin ibu-ibu RT untuk penyuluhan kesehatan, informasi PKK, dan kas RT.",
     waktu: "Sesuai kesepakatan masing-masing RT",
-    kontak: "0821-4723-7850 (Padukuhan Sedayu)",
+    kontak: "0821-4723-7850 (Padukuhan Sedayu) / Pengurus RT setempat",
   },
   "pertemuan-rt-bapak": {
     title: "Pertemuan RT Bapak-bapak",
     description:
       "Pertemuan warga pria yang membahas ronda, informasi dusun, dan keuangan RT.",
-    waktu: "Sesuai kesepakatan warga RT",
-    kontak: "0821-4723-7850 (Padukuhan Sedayu)",
+    waktu: "Sesuai kesepakatan masing-masing RT",
+    kontak: "0821-4723-7850 (Padukuhan Sedayu) / Pengurus RT setempat",
   },
   "dasa-wisma": {
     title: "Pertemuan Dasa Wisma",
     description:
       "Kelompok ibu rumah tangga yang membahas kegiatan keluarga, kesehatan, dan pemanfaatan pekarangan.",
-    waktu: "Sesuai waktu luang pengurus",
-    kontak: "0821-4723-7850 (Padukuhan Sedayu)",
+    waktu: "Sesuai kesepakaan masing-masing Dasa Wisma",
+    kontak: "0821-4723-7850 (Padukuhan Sedayu) / Pengurus Dasa Wisma setempat",
   },
   "sanggar-tari": {
     title: "Sanggar Tari",
     description:
-      "Pelatihan tari tradisional anak-anak yang dilaksanakan rutin dengan pelatih lokal.",
+      "Pelatihan tari tradisional anak-anak yang dilaksanakan di padukuhan sedayu.",
     waktu: "Setiap Sabtu pukul 13.00 WIB",
     kontak: "0821-4723-7850 (Padukuhan Sedayu)",
   },
   "jatilan": {
     title: "Sanggar Tari Jatilan",
     description:
-      "Pelatihan dan pertunjukan seni Jatilan (kuda lumping) sebagai pelestarian budaya lokal.",
-    waktu: "Tentatif sesuai jadwal pentas",
+      "Pelatihan dan pertunjukan seni Jatilan sebagai pelestarian budaya lokal.",
+    waktu: "Tentatif",
     kontak: "0821-4723-7850 (Padukuhan Sedayu)",
   },
 };
@@ -126,7 +124,7 @@ export function generateStaticParams(): { slug: string }[] {
 
 // Metadata dinamis untuk SEO
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params; // await params terlebih dahulu
+  const { slug } = await params;
   const kegiatan = kegiatanData[slug];
   if (!kegiatan) return { title: "Kegiatan Tidak Ditemukan" };
   return {
@@ -137,7 +135,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 // Halaman detail kegiatan
 export default async function KegiatanDetailPage({ params }: PageProps) {
-  const { slug } = await params; // await params terlebih dahulu
+  const { slug } = await params;
   const kegiatan = kegiatanData[slug];
 
   if (!kegiatan) return notFound();
