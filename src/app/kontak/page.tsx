@@ -12,7 +12,7 @@ export default function KontakPage() {
         </div>
         <div className="mb-6">
           <h2 className="font-semibold">Email</h2>
-          <p>desa.sedayu@example.com</p>
+          <p>padukuhan.sedayu@gmail.com</p>
         </div>
         <div className="mb-6">
           <h2 className="font-semibold">Telepon / WhatsApp</h2>
