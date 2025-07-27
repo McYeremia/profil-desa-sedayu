@@ -3,9 +3,9 @@ import { Metadata } from "next";
 
 // Tipe props halaman
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // Data kegiatan
@@ -126,7 +126,8 @@ export function generateStaticParams(): { slug: string }[] {
 
 // Metadata dinamis untuk SEO
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const kegiatan = kegiatanData[params.slug];
+  const { slug } = await params; // await params terlebih dahulu
+  const kegiatan = kegiatanData[slug];
   if (!kegiatan) return { title: "Kegiatan Tidak Ditemukan" };
   return {
     title: kegiatan.title,
@@ -135,8 +136,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 // Halaman detail kegiatan
-export default function KegiatanDetailPage({ params }: PageProps) {
-  const kegiatan = kegiatanData[params.slug];
+export default async function KegiatanDetailPage({ params }: PageProps) {
+  const { slug } = await params; // await params terlebih dahulu
+  const kegiatan = kegiatanData[slug];
 
   if (!kegiatan) return notFound();
 
